@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var justButton: UIButton!
     
     let text = "Rick & Morty 🤘🏻"
-    let textPressed = "Rick & Morty 🤟🏻"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +24,14 @@ class ViewController: UIViewController {
         
         justButton.setAttributedTitle(title, for: .normal)
         navigationItem.backButtonTitle = text
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailsVC = segue.destination
+    }
+    
+    @IBAction func transitionButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "showDetails", sender: self)
     }
 }
 

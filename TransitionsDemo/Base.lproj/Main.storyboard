@@ -28,6 +28,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="transitionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3n-hl-odH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
