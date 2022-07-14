@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Кнопка-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,18 +39,36 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fe0-R9-Tk6" secondAttribute="trailing" constant="50" id="mnW-e5-bWq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Кнопка" id="jP6-lo-M7B"/>
+                    <navigationItem key="navigationItem" id="jP6-lo-M7B"/>
                     <connections>
                         <outlet property="justButton" destination="Fe0-R9-Tk6" id="P56-Aa-RDl"/>
+                        <segue destination="vVU-hd-Udg" kind="show" id="n4h-Ks-lub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="90.401785714285708"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WXT-d0-9Xr">
+            <objects>
+                <viewController id="vVU-hd-Udg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eg3-wW-sf2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tPl-Jg-4Y8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lUn-1n-raf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fm5-Tr-Axt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="90"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="UBK-Tn-iaA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHR-Gq-2Qz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2m-0t-Efq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="H4V-GI-KrS">
@@ -62,7 +80,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2hK-Rv-K4x"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uHR-Gq-2Qz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>

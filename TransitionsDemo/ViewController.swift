@@ -16,15 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = text
-        
         let attributes: [NSAttributedString.Key : Any]? = [
-            .font : UIFont.init(name: "Helvetica", size: 30.0)!
+            .font : UIFont.init(name: "Helvetica", size: 30.0) ?? .systemFont(ofSize: 30.0)
         ]
         
         let title = NSAttributedString(string: text, attributes: attributes)
         
         justButton.setAttributedTitle(title, for: .normal)
+        navigationItem.backButtonTitle = text
     }
 
 
