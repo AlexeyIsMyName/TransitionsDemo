@@ -4,9 +4,62 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--New Item View Controller-->
+        <scene sceneID="P0Z-IG-tzB">
+            <objects>
+                <viewController id="si8-RO-hmR" customClass="NewItemViewController" customModule="TransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBG-l8-Miy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5s-an-Oe7">
+                                <rect key="frame" x="57" y="124" width="300" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="eTm-EU-3Sy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dmq-Ao-a4o">
+                                <rect key="frame" x="144" y="376" width="126" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHy-tV-2pR">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="41"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Сохранить">
+                                            <color key="titleColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-yd-oBS">
+                                        <rect key="frame" x="0.0" y="49" width="126" height="41"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Отмена">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mao-Fm-TGT"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.14901960784313725" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dmq-Ao-a4o" firstAttribute="centerX" secondItem="lBG-l8-Miy" secondAttribute="centerX" id="MYc-tq-jMy"/>
+                            <constraint firstItem="l5s-an-Oe7" firstAttribute="top" secondItem="mao-Fm-TGT" secondAttribute="top" constant="80" id="P1R-qn-KPC"/>
+                            <constraint firstItem="dmq-Ao-a4o" firstAttribute="centerY" secondItem="lBG-l8-Miy" secondAttribute="centerY" id="SlU-sl-XCh"/>
+                            <constraint firstItem="l5s-an-Oe7" firstAttribute="centerX" secondItem="lBG-l8-Miy" secondAttribute="centerX" id="ebT-2u-O72"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-QZ-YrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.9420289855075" y="-682.36607142857144"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -41,7 +94,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fe0-R9-Tk6" secondAttribute="trailing" constant="50" id="mnW-e5-bWq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jP6-lo-M7B"/>
+                    <navigationItem key="navigationItem" id="jP6-lo-M7B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ur7-ai-Gsr">
+                            <connections>
+                                <segue destination="si8-RO-hmR" kind="presentation" id="jEQ-Lo-PNa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="justButton" destination="Fe0-R9-Tk6" id="P56-Aa-RDl"/>
                         <segue destination="vVU-hd-Udg" kind="show" identifier="showDetails" id="n4h-Ks-lub"/>
@@ -80,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fm5-Tr-Axt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="90"/>
+            <point key="canvasLocation" x="2016" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UBK-Tn-iaA">
@@ -101,4 +160,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
