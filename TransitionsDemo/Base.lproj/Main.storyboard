@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="si8-RO-hmR" customClass="NewItemViewController" customModule="TransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBG-l8-Miy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5s-an-Oe7">
@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dmq-Ao-a4o">
-                                <rect key="frame" x="144" y="376" width="126" height="90"/>
+                                <rect key="frame" x="144" y="403" width="126" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHy-tV-2pR">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="41"/>
@@ -34,6 +34,9 @@
                                         <state key="normal" title="Сохранить">
                                             <color key="titleColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="8DK-LS-1aN" kind="unwind" unwindAction="unwindWithSegue:" id="liy-sA-lgz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-yd-oBS">
                                         <rect key="frame" x="0.0" y="49" width="126" height="41"/>
@@ -58,11 +61,13 @@
                             <constraint firstItem="l5s-an-Oe7" firstAttribute="centerX" secondItem="lBG-l8-Miy" secondAttribute="centerX" id="ebT-2u-O72"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mN9-6w-ygD"/>
                     <connections>
                         <outlet property="titleTextField" destination="l5s-an-Oe7" id="m1x-xI-Bpt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-QZ-YrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8DK-LS-1aN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2015.9420289855075" y="-682.36607142857144"/>
         </scene>
@@ -103,7 +108,7 @@
                     <navigationItem key="navigationItem" id="jP6-lo-M7B">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ur7-ai-Gsr">
                             <connections>
-                                <segue destination="si8-RO-hmR" kind="presentation" id="jEQ-Lo-PNa"/>
+                                <segue destination="si8-RO-hmR" kind="presentation" modalPresentationStyle="fullScreen" id="jEQ-Lo-PNa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,7 +155,6 @@
         <!--Navigation Controller-->
         <scene sceneID="UBK-Tn-iaA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uHR-Gq-2Qz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2m-0t-Efq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="H4V-GI-KrS">
@@ -162,6 +166,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2hK-Rv-K4x"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHR-Gq-2Qz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>

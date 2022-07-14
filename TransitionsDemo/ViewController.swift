@@ -11,25 +11,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var justButton: UIButton!
     
-    let titles = ["Rick & Morty 🤘🏻"]
+    var titles = ["Rick & Morty 🤘🏻"]
     private var randomTitle = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setRandomTitle()
-        
-        let attributes: [NSAttributedString.Key : Any]? = [
-            .font : UIFont.init(name: "Helvetica", size: 30.0) ?? .systemFont(ofSize: 30.0)
-        ]
-        
-        let title = NSAttributedString(string: randomTitle, attributes: attributes)
-        
-        justButton.setAttributedTitle(title, for: .normal)
-        navigationItem.backButtonTitle = randomTitle
+        updateUI()
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
-        
+        guard let newItemVC = segue.source as? NewItemViewController else { return }
+        guard let title = newItemVC.titleTextField.text else { return }
+        titles.append(title)
+//        setRandomTitle()
+//        updateUI()
     }
     
     @IBAction func transitionButtonPressed(_ sender: UIButton) {
@@ -38,6 +35,17 @@ class ViewController: UIViewController {
     
     private func setRandomTitle() {
         randomTitle = titles.randomElement() ?? "Random Title ✌️"
+    }
+    
+    private func updateUI() {
+        let attributes: [NSAttributedString.Key : Any]? = [
+            .font : UIFont.init(name: "Helvetica", size: 30.0) ?? .systemFont(ofSize: 30.0)
+        ]
+        
+        let title = NSAttributedString(string: randomTitle, attributes: attributes)
+        
+        justButton.setAttributedTitle(title, for: .normal)
+        navigationItem.backButtonTitle = randomTitle
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
