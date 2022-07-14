@@ -42,6 +42,9 @@
                                         <state key="normal" title="Отмена">
                                             <color key="titleColor" systemColor="systemPinkColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="canselButtonPressed" destination="si8-RO-hmR" eventType="touchUpInside" id="GPS-b3-KvJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -55,6 +58,9 @@
                             <constraint firstItem="l5s-an-Oe7" firstAttribute="centerX" secondItem="lBG-l8-Miy" secondAttribute="centerX" id="ebT-2u-O72"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleTextField" destination="l5s-an-Oe7" id="m1x-xI-Bpt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-QZ-YrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

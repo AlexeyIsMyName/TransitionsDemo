@@ -28,9 +28,8 @@ class ViewController: UIViewController {
         navigationItem.backButtonTitle = randomTitle
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailsVC = segue.destination as?DetailsViewController else { return }
-        detailsVC.detailsText = sender as? String
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        
     }
     
     @IBAction func transitionButtonPressed(_ sender: UIButton) {
@@ -39,6 +38,11 @@ class ViewController: UIViewController {
     
     private func setRandomTitle() {
         randomTitle = titles.randomElement() ?? "Random Title ✌️"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsVC = segue.destination as?DetailsViewController else { return }
+        detailsVC.detailsText = sender as? String
     }
 }
 
