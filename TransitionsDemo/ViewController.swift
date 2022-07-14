@@ -27,11 +27,12 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailsVC = segue.destination
+        guard let detailsVC = segue.destination as? DetailsViewController else { return }
+        detailsVC.detailsText = sender as? String
     }
     
     @IBAction func transitionButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "showDetails", sender: self)
+        performSegue(withIdentifier: "showDetails", sender: text)
     }
 }
 
