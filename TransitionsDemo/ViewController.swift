@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var justButton: UIButton!
     
     let text = "Rick & Morty 🤘🏻"
+    let textPressed = "Rick & Morty 🤟🏻"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,5 @@ class ViewController: UIViewController {
         justButton.setAttributedTitle(title, for: .normal)
         navigationItem.backButtonTitle = text
     }
-
-
 }
 

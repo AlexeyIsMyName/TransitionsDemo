@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +31,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.14901960784313725" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fe0-R9-Tk6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0N4-J8-Sj2"/>
                             <constraint firstItem="Fe0-R9-Tk6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Pcd-ld-Q8P"/>
@@ -42,24 +41,39 @@
                     <navigationItem key="navigationItem" id="jP6-lo-M7B"/>
                     <connections>
                         <outlet property="justButton" destination="Fe0-R9-Tk6" id="P56-Aa-RDl"/>
-                        <segue destination="vVU-hd-Udg" kind="show" id="n4h-Ks-lub"/>
+                        <segue destination="vVU-hd-Udg" kind="show" identifier="showDetails" id="n4h-Ks-lub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="90.401785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="WXT-d0-9Xr">
             <objects>
-                <viewController id="vVU-hd-Udg" sceneMemberID="viewController">
+                <viewController id="vVU-hd-Udg" customClass="DetailsViewController" customModule="TransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eg3-wW-sf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOU-7d-LCE">
+                                <rect key="frame" x="164" y="428" width="86" height="40.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
+                                <color key="textColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tPl-Jg-4Y8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.14901960784313725" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gOU-7d-LCE" firstAttribute="centerY" secondItem="eg3-wW-sf2" secondAttribute="centerY" id="WBw-Mm-Ult"/>
+                            <constraint firstItem="gOU-7d-LCE" firstAttribute="centerX" secondItem="eg3-wW-sf2" secondAttribute="centerX" id="xw2-PD-e7U"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lUn-1n-raf"/>
+                    <connections>
+                        <outlet property="detailsLabel" destination="gOU-7d-LCE" id="HT1-kE-nHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fm5-Tr-Axt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,9 +98,4 @@
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
